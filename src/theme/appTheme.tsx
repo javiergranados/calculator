@@ -5,9 +5,20 @@ const appStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'black',
   },
-  text: {
+  calculatorContainer: {
+    flex: 1,
+    paddingHorizontal: 20,
+    justifyContent: 'flex-end',
+  },
+  result: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 60,
+    textAlign: 'right',
+  },
+  memoizedResult: {
+    color: 'rgba(255,255,255,0.5)',
+    fontSize: 30,
+    textAlign: 'right',
   },
 });
 
