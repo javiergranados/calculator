@@ -1,29 +1,30 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 interface ButtonProps {
   text: string;
   color?: string;
-  textColor?: string;
+  width?: number;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, color = '#2d2d2d', textColor = 'white' }) => {
+const Button: React.FC<ButtonProps> = ({ text, color = '#2d2d2d', width = 80 }) => {
   return (
-    <View style={{ ...styles.container, backgroundColor: color }}>
-      <Text style={{ ...styles.text, color: textColor }}>{text}</Text>
-    </View>
+    <TouchableOpacity activeOpacity={0.6}>
+      <View style={{ ...styles.button, backgroundColor: color, width: width }}>
+        <Text style={{ ...styles.textButton, color: color === '#9b9b9b' ? 'black' : 'white' }}>{text}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  button: {
     height: 80,
-    width: 80,
     borderRadius: 100,
     justifyContent: 'center',
     marginHorizontal: 10,
   },
-  text: {
+  textButton: {
     textAlign: 'center',
     padding: 10,
     fontSize: 30,
