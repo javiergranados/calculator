@@ -14,6 +14,7 @@ const appStyles = StyleSheet.create({
     color: 'white',
     fontSize: 60,
     textAlign: 'right',
+    marginBottom: 10,
   },
   memoizedResult: {
     color: 'rgba(255,255,255,0.5)',

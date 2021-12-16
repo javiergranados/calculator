@@ -5,11 +5,12 @@ interface ButtonProps {
   text: string;
   color?: string;
   width?: number;
+  action: (key: string) => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, color = '#2d2d2d', width = 80 }) => {
+const Button: React.FC<ButtonProps> = ({ text, color = '#2d2d2d', width = 80, action }) => {
   return (
-    <TouchableOpacity activeOpacity={0.6}>
+    <TouchableOpacity onPress={() => action(text)} activeOpacity={0.6}>
       <View style={{ ...styles.button, backgroundColor: color, width: width }}>
         <Text style={{ ...styles.textButton, color: color === '#9b9b9b' ? 'black' : 'white' }}>{text}</Text>
       </View>
