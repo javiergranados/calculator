@@ -25,6 +25,20 @@ const CalculatorScreen = () => {
     setResult(result === '0' ? key : result + key);
   };
 
+  const handleSign = () => setResult((parseFloat(result) * -1).toString());
+
+  const handleDelete = () => {
+    if (result === '' || result === '0' || result.length === 1 || (result.length === 2 && result.includes('-'))) {
+      setResult('0');
+      return;
+    }
+    if (result.includes('.') && result.indexOf('.') === result.length - 1) {
+      setResult(result.substring(0, result.indexOf('.')));
+      return;
+    }
+    setResult(result.substring(0, result.length - 1));
+  };
+
   return (
     <View style={appStyles.calculatorContainer}>
       <Text style={appStyles.memoizedResult}>{memoizedResult}</Text>
@@ -33,8 +47,8 @@ const CalculatorScreen = () => {
       </Text>
       <View style={styles.buttonRow}>
         <Button text="C" color="#9b9b9b" action={clean} />
-        <Button text="+/-" color="#9b9b9b" />
-        <Button text="del" color="#9b9b9b" />
+        <Button text="+/-" color="#9b9b9b" action={handleSign} />
+        <Button text="del" color="#9b9b9b" action={handleDelete} />
         <Button text="/" color="#ff9427" />
       </View>
       <View style={styles.buttonRow}>
