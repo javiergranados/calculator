@@ -1,12 +1,12 @@
 {
-  "name": "calculator",
+  "name": "calculator-app",
   "version": "0.1.0",
   "description": "app for the course react-native from fernando herrera",
   "license": "SEE LICENSE IN LICENSE",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/javiergranados/calculator"
+    "url": "https://github.com/javiergranados/calculator-app"
   },
   "scripts": {
     "android": "react-native run-android",
